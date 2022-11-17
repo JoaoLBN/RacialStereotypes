@@ -50,6 +50,8 @@ angular
       User.setSchoolGrade($scope.schoolGrade);
       User.setEconomiState($scope.economicState);
       User.setEmail($scope.email);
+      User.setUniversityAdmission($scope.universityAdmission);
+      User.setUniversityEducation($scope.universityEducation);
       User.setWhatsapp($scope.whatsapp);
 
       User.save();

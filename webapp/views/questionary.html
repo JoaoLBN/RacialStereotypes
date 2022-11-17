@@ -23,7 +23,11 @@
 
             <md-input-container class="block md-accent" flex-gt-sm>
                 <label>Idade</label>
-                <input type="number" name="age" ng-required="true" ng-model="age">
+                <md-select class="md-accent" ng-required="true" ng-model="age">
+                    <md-option ng-repeat="g in ['abaixo de 18', '18 a 22','23 a 27', '28 a 32', '33 a 37', '38 acima']">
+                        {{g}}
+                    </md-option>
+                </md-select>
             </md-input-container>
 
             <!-- <md-input-container class="block md-accent" flex-gt-sm>
@@ -40,7 +44,7 @@
             <md-input-container class="block md-accent" flex-gt-sm>
                 <label>Etnia</label>
                 <md-select class="md-accent" ng-required="true" ng-model="ethnicity">
-                    <md-option ng-repeat="g in ['Pardo','Negro', 'Branco', 'Indígenas', 'Prefiro não Responder']">
+                    <md-option ng-repeat="g in ['Pardo','Negro', 'Branco', 'Indígenas', 'Amarelo', 'Prefiro não Responder']">
                         {{g}}
                     </md-option>
                 </md-select>
@@ -49,21 +53,14 @@
             <md-input-container class="md-accent"flex-gt-sm>
                 <label ng-required="true">Gênero</label>
                 <md-select class="md-accent" ng-required="true" ng-model="gender">
-                    <md-option ng-repeat="g in ['Masculino','Feminino', 'Prefiro não Responder']">
+                    <md-option ng-repeat="g in ['Masculino','Feminino', 'Transgênero', 'Não binário', 'Agênero', 'Gênero Neutro', 'Prefiro não Responder']">
                         {{g}}
                     </md-option>
                 </md-select>
             </md-input-container>
 
 
-            <md-input-container class="block md-accent" flex-gt-sm>
-                <label>Ano escolar</label>
-                <md-select class="md-accent" ng-required="true" ng-model="schoolGrade">
-                    <md-option ng-repeat="g in ['1º ano','2º ano', '3º ano']   ">
-                        {{g}}
-                    </md-option>
-                </md-select>
-            </md-input-container>
+            
             <md-input-container class="block md-accent" flex-gt-sm>
                 <label>Estado econômico</label>
                 <md-select class="md-accent" ng-required="true" ng-model="economicState">
@@ -74,6 +71,24 @@
                 </md-select>
             </md-input-container>
 
+        </div>
+        <div layout="row">
+        <md-input-container class="block" flex-gt-sm>
+            <label>Nível de escolaridade</label>
+            <md-select ng-required="true" ng-model="universityEducation">
+                <md-option ng-repeat="g in ['Graduação','Pós-graduação']">
+                    {{g}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container class="block" flex-gt-sm>
+            <label>Forma de ingresso na Universidade</label>
+            <md-select ng-required="true" ng-model="universityAdmission">
+                <md-option ng-repeat="g in ['Cotas', 'Ampla concorrência']">
+                    {{g}}
+                </md-option>
+            </md-select>
+        </md-input-container>
         </div>
 
         <!-- <md-card-content layout="column">

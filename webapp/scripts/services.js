@@ -2,9 +2,9 @@ var tutorServices = angular.module("tutor.services", []);
 
 tutorServices.service("configService", function() {
 
-    var opts = ["default", "stMale", "stFemale"];
+    var opts = ["stBlack", "stWhite"];
 
-    var random = Math.floor((Math.random() * 123457)) % 3;
+    var random = Math.floor((Math.random() * 123457)) % 2;
     var currentTheme = opts[random];
     // var currentTheme = "default";
 
@@ -54,6 +54,8 @@ tutorServices.service("User", function($http) {
         city: "",
         email: "",
         whatsapp:"",
+        universityAdmission: "",
+        universityEducation: "",
         economicState: "",
         schoolGrade: "",
         pretestPoints: 0,
@@ -105,6 +107,12 @@ tutorServices.service("User", function($http) {
     }
     this.setWhatsapp = function(value) {
         resp.whatsapp = value;
+    }
+    this.setUniversityAdmission = function(value) {
+        resp.universityAdmission = value
+    }
+    this.setUniversityEducation = function(value) {
+        resp.universityEducation = value
     }
     this.setTestType = function(value) {
         resp.testType = value;
@@ -168,8 +176,8 @@ tutorServices.service("User", function($http) {
 
     this.save = function() {
         $http({
-            //url: "http://localhost:8080/save-response",
-            url: "https://weblab.nees.com.br/joao/save-response",
+            //url: "https://weblab.nees.com.br/joao/save-response",
+            url: "http://localhost:8086/save-response",
             dataType: "json",
             method: "POST",
             headers: {

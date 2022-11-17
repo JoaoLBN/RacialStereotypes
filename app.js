@@ -38,19 +38,19 @@ angular.module("tutor", ["ngRoute", "ngResource", "ngAnimate", "ngMaterial", "ng
     $mdThemingProvider.alwaysWatchTheme(true);
 
     // Neutral Theme
-    $mdThemingProvider.theme("default")
-        .primaryPalette("purple")
-        .accentPalette("purple")
-        .warnPalette("purple");
+    // $mdThemingProvider.theme("default")
+    //     .primaryPalette("purple")
+    //     .accentPalette("purple")
+    //     .warnPalette("purple");
 
     // ST-F 
-    $mdThemingProvider.theme("stFemale")
+    $mdThemingProvider.theme("stWhite")
         .primaryPalette("purple")
         .accentPalette("purple")
         .warnPalette("purple");
 
     // ST-M 
-    $mdThemingProvider.theme("stMale")
+    $mdThemingProvider.theme("stBlack")
         .primaryPalette("purple")
         .accentPalette("purple")
         .warnPalette("purple");

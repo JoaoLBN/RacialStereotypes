@@ -1,26 +1,17 @@
 angular.module('tutor').controller("PosttestCtrl2", function($scope, $location, User) {
 
-    $scope.questions = ["Dormi ou descansei o suficiente antes de realizar a atividade.",
-    "Estava ansioso(a) na realização da atividade.",
-    "Estava distraído(a) na atividade com outra tarefa.",
-    "Amigos me impediram de prestar atenção na atividade.",
-    "Estava deprimido(a) ou abatido(a) para realizar a atividade.",
-    "As coisas em casa estão piores.",
-    "Estava irritado(a) na realização da atividade.",
-    "Deixei a atividade para última hora.",
-    "Estava aborrecido(a) na realização da atividade.",
-    "Estava envolvido(a) em muitas outras tarefas para realizar a atividade.",
-    "Deixei a atividade para o último momento.",
-    "Estava envolvido(a) em muitos trabalhos diferentes durante a realização da atividade.",
-    "Não fiz o melhor do que esperado na atividade.",
-    "Estava distraído(a) sonhando acordado(a) durante a atividade.",
-    "Estava ocupado(a) para realizar a atividade."
-    ];
+    $scope.questions = [
+    "Estou Preocupado(a)",
+    "Estou descontraído(a)",
+    "Sinto-me nervoso(a)",
+    "Sinto-me à vontade", 
+    "Estou tenso(a)",
+    "Sinto-me calmo(a)"];
     $scope.answers = [];
 
     $scope.processAnswers = function() {
 
-        if ($scope.answers.length < 15) {
+        if ($scope.answers.length < 6) {
             $scope.msg = "Por favor, responda todas as perguntas!"
         } else {
 

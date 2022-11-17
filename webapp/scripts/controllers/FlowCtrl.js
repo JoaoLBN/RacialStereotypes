@@ -3,9 +3,9 @@ angular
   .controller(
     "FlowCtrl",
     function ($scope, $window, $location, configService, User) {
-      var themes = ["default", "stFemale", "stMale"];
+      var themes = ["stWhite", "stBlack"];
 
-      var random = Math.floor(Math.random() * 10000) % 3;
+      var random = Math.floor(Math.random() * 10000) % 2;
 
       $scope.questions = [
         // "Fui desafiado, mas acredito que minhas habilidades me permitiriam enfrentar o desafio",

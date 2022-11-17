@@ -11,60 +11,60 @@ angular.module('tutor').controller("HomeCtrl", function ($scope, $location, $mdD
     var userAvatar = "assets/" + configService.getTheme() + "/images/avatar1.png";
     var level = 0;
 
-    var inc = false;
-    var dec = false;
+    // var inc = false;
+    // var dec = false;
 
-    var bgColor = "white";
+    // var bgColor = "white";
 
-    var currentMessage = "Correto!"
-    var motivationalPhrases = [];
-    var valorMax = 4;
-    var motivationalPhrasesMale = [
-        "A maior parte dos profissionais na área das ciências exatas são homens.",
-        "Homens são tão bons quantoas mulhere sem atividades de raciocínio lógico e resolução de tarefas complexas.",
-        "Mais da metade dos pesquisadores doutores do Brasil são homens.",
-        "Os homens estão entre os líderes na pesquisa científica no Brasil.",
-        "Os homens são a maioria nas áreas de pesquisa e atuação das ciências da matemática, comunicação, tecnologia e natureza."
-    ]
-    var motivationalPhrasesFemale = [
-        "Apesar do estereótipo social de que mulheres não são boas na área de exatas, as pesquisas apontam que mulheres têm tanta capacidade quanto os homens para desenvolver carreira nessas áreas.",
-        "As mulheres são líderes na pesquisa científica no Brasil!",
-        "Sigmund Freud (2020),o pai da Psicanálise, já no início do séc. XX, comentava sobre a desigualdade de gênero. Nos diz Freud, que o desempenho intelectual não é uma questão de competência de gênero, mas de incentivo para tal, então mulheres são tão capazes quanto os homens de se sair bem em atividades de raciocínio lógico.",
-        "Entre os 500 top autores da USP publicando entre 2015-2021, 131 são mulheres.E as pesquisadoras, doutoras, somam mais da metade dos titulares da área da saúde.",
-        "Mulheres têm tanta capacidade quanto os homens em atividades de raciocínio lógico e resolução de tarefas complexas."
-    ]
+    // var currentMessage = "Correto!"
+    // var motivationalPhrases = [];
+    // var valorMax = 4;
+    // var motivationalPhrasesMale = [
+    //     "A maior parte dos profissionais na área das ciências exatas são homens.",
+    //     "Homens são tão bons quantoas mulhere sem atividades de raciocínio lógico e resolução de tarefas complexas.",
+    //     "Mais da metade dos pesquisadores doutores do Brasil são homens.",
+    //     "Os homens estão entre os líderes na pesquisa científica no Brasil.",
+    //     "Os homens são a maioria nas áreas de pesquisa e atuação das ciências da matemática, comunicação, tecnologia e natureza."
+    // ]
+    // var motivationalPhrasesFemale = [
+    //     "Apesar do estereótipo social de que mulheres não são boas na área de exatas, as pesquisas apontam que mulheres têm tanta capacidade quanto os homens para desenvolver carreira nessas áreas.",
+    //     "As mulheres são líderes na pesquisa científica no Brasil!",
+    //     "Sigmund Freud (2020),o pai da Psicanálise, já no início do séc. XX, comentava sobre a desigualdade de gênero. Nos diz Freud, que o desempenho intelectual não é uma questão de competência de gênero, mas de incentivo para tal, então mulheres são tão capazes quanto os homens de se sair bem em atividades de raciocínio lógico.",
+    //     "Entre os 500 top autores da USP publicando entre 2015-2021, 131 são mulheres.E as pesquisadoras, doutoras, somam mais da metade dos titulares da área da saúde.",
+    //     "Mulheres têm tanta capacidade quanto os homens em atividades de raciocínio lógico e resolução de tarefas complexas."
+    // ]
 
-    var sorteados = [];
-    var criarUnico = function () {
-        if (sorteados.length == valorMax) {
-            sorteados = [];
-            return;
-        }
-        var sugestao = Math.ceil(Math.random() * valorMax);
-        while (sorteados.indexOf(sugestao) >= 0) {
-            sugestao = Math.ceil(Math.random() * valorMax);
-        }
-        sorteados.push(sugestao);
-        return sugestao;
-    };
+    // var sorteados = [];
+    // var criarUnico = function () {
+    //     if (sorteados.length == valorMax) {
+    //         sorteados = [];
+    //         return;
+    //     }
+    //     var sugestao = Math.ceil(Math.random() * valorMax);
+    //     while (sorteados.indexOf(sugestao) >= 0) {
+    //         sugestao = Math.ceil(Math.random() * valorMax);
+    //     }
+    //     sorteados.push(sugestao);
+    //     return sugestao;
+    // };
 
-    var startPhrases = function () {
-        for (i = 0; i < 20; i++) {
-            var f = criarUnico();
-            if (f == undefined) f = 0;
-            if (configService.getTheme() == "stMale") {
-                motivationalPhrases[i] = motivationalPhrasesMale[f];
-            }
-            if (configService.getTheme() == "stFemale") {
-                motivationalPhrases[i] = motivationalPhrasesFemale[f];
-            }
-            if (configService.getTheme() == "default") {
-                motivationalPhrases[i] = "Resposta Errada!"
-            }
-        }
-    }
-    f = 0;
-    startPhrases();
+    // var startPhrases = function () {
+    //     for (i = 0; i < 20; i++) {
+    //         var f = criarUnico();
+    //         if (f == undefined) f = 0;
+    //         if (configService.getTheme() == "stBlack") {
+    //             motivationalPhrases[i] = motivationalPhrasesMale[f];
+    //         }
+    //         if (configService.getTheme() == "stWhite") {
+    //             motivationalPhrases[i] = motivationalPhrasesFemale[f];
+    //         }
+    //         if (configService.getTheme() == "default") {
+    //             motivationalPhrases[i] = "Resposta Errada!"
+    //         }
+    //     }
+    // }
+    // f = 0;
+    // startPhrases();
     var flagMessage = false;
 
     var levelFiveFlag = true;
@@ -263,7 +263,7 @@ angular.module('tutor').controller("HomeCtrl", function ($scope, $location, $mdD
     var setMsgType = function (type) {
 
         if (type == "red") {
-            currentMessage = motivationalPhrases[k]; //"Resposta Errada!"
+            currentMessage = "Resposta Errada!"; //"Resposta Errada!"
             // console.log("bla: ", motivationalPhrases[k]);
             k += 1;
         } else {
@@ -279,41 +279,26 @@ angular.module('tutor').controller("HomeCtrl", function ($scope, $location, $mdD
         setMsgType(type);
 
         // Resposta errada
-        if (type == "red" && configService.getTheme() != "default") {
-            flagMessage = false;
-
-            $mdDialog.show({
-                controller: 'DialogCtrl',
-                controllerAs: 'ctrl',
-                templateUrl: 'views/dialog.html',
-                parent: angular.element(document.body),
-                locals: {
-                    title: "Resposta Errada! Não desanime. Você sabia?",
-                    textContent: currentMessage
-                }
-            });
-
-            return;
-        }
+        
 
         // Resposta certa
         bgColor = type;
         flagMessage = true;
         
-        if (configService.getTheme() == "stMale") {
+        if (configService.getTheme() == "stBlack") {
             setTimeout(function () {
                 $scope.$apply(function () {
                     bgColor = "white";
                     flagMessage = false;
                 });
             }, 5000);
-        } else if (configService.getTheme() == "stFemale") {
+        } else if (configService.getTheme() == "stWhite") {
             setTimeout(function () {
                 $scope.$apply(function () {
                     bgColor = "white";
                     flagMessage = false;
                 });
-            }, 7000);
+            }, 5000);
         } else if (configService.getTheme() == "default") {
             setTimeout(function () {
                 $scope.$apply(function () {

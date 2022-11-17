@@ -1,19 +1,16 @@
 angular.module('tutor').controller("PretestCtrl", function($scope, $window, $location, configService, User) {
 
-    var themes = ["default", "stFemale", "stMale"];
+    var themes = ["stWhite", "stBlack"];
 
-    var random = Math.floor((Math.random() * 10000)) % 3;
+    var random = Math.floor((Math.random() * 10000)) % 2;
 
     $scope.questions = [
-    "Minhas habilidades combinam com o desafio que estou experimentando",
-    "Realizo a atividade automaticamente sem pensar muito",
-    "Sei o que quero alcançar", 
-    "É muito claro para mim como estou me saindo na atividade",
-    "Estou completamente focado na tarefa em questão", 
-    "Tenho um sentimento de total controle sobre o que estou fazendo",
-    "Não estou preocupado com o que os outros podem estar pensando de mim", 
-    "A forma como o tempo passa parece ser diferente da normal", 
-    "A experiência é extremamente recompensadora"];
+    "Sinto-me calmo(a)",
+    "Estou tenso(a)",
+    "Sinto-me à vontade", 
+    "Sinto-me nervoso(a)",
+    "Estou descontraído(a)",
+    "Estou Preocupado(a)"];
     $scope.answers = [];
 
     $scope.setTime = function() {
@@ -25,7 +22,7 @@ angular.module('tutor').controller("PretestCtrl", function($scope, $window, $loc
 
         //console.log($scope.answers);
         //  validation
-        if ($scope.answers.length < 9) {
+        if ($scope.answers.length < 6) {
             $scope.msg = "Por favor, responda todas as perguntas!"
         } else {
             function add(a, b) {
