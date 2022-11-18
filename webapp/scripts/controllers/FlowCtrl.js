@@ -18,7 +18,7 @@ angular
         // "O tempo pareceu estar alterado (mais lento ou mais acelerado)",
         // "Realmente curti a experiência da atividade que estava fazendo",
         "Minhas habilidades combinavam com o desafio da atividade que estava fazendo",
-        // "As coisas pareciam estar acontecendo automaticamente",
+        "As coisas pareciam estar acontecendo automaticamente",
         // "Tive uma clara noção do que queria fazer",
         // "Estava consciente do quão bem eu estava fazendo",
         // "Não me esforcei para manter a minha mente no que estava acontecendo",
