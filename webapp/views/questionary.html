@@ -42,9 +42,9 @@
         </div>
         <div layout="row">
             <md-input-container class="block md-accent" flex-gt-sm>
-                <label>Etnia</label>
+                <label>Cor ou Raça</label>
                 <md-select class="md-accent" ng-required="true" ng-model="ethnicity">
-                    <md-option ng-repeat="g in ['Pardo','Negro', 'Branco', 'Indígenas', 'Amarelo', 'Prefiro não Responder']">
+                    <md-option ng-repeat="g in ['Branca','Preta', 'Parda', 'Indígena', 'Amarela', 'Prefiro não Responder']">
                         {{g}}
                     </md-option>
                 </md-select>
@@ -76,7 +76,7 @@
         <md-input-container class="block" flex-gt-sm>
             <label>Nível de escolaridade</label>
             <md-select ng-required="true" ng-model="universityEducation">
-                <md-option ng-repeat="g in ['Graduação','Pós-graduação']">
+                <md-option ng-repeat="g in ['Graduação']">
                     {{g}}
                 </md-option>
             </md-select>
@@ -84,7 +84,10 @@
         <md-input-container class="block" flex-gt-sm>
             <label>Forma de ingresso na Universidade</label>
             <md-select ng-required="true" ng-model="universityAdmission">
-                <md-option ng-repeat="g in ['Cotas', 'Ampla concorrência']">
+                <md-option ng-repeat="g in ['Ampla concorrência', 'Demanda 1 (NÃO PPI, renda <= 1,5)', 'Demanda 2 (PPI, renda <= 1,5)',
+                                      'Demanda 3 (NÃO PPI, independente de renda)', 'Demanda 4 (PPI, independente de renda)',
+                                      'PcD - Demanda 1 (NÃO PPI, renda <=1,5)', 'PcD - Demanda 2 (PPI, renda <= 1,5)',
+                                      'PcD - Demanda 3 (NÃO PPI, independente de renda)', 'PcD - Demanda 4 (PPI, independente de renda)']">
                     {{g}}
                 </md-option>
             </md-select>
